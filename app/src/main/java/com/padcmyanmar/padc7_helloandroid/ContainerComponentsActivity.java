@@ -26,7 +26,7 @@ public class ContainerComponentsActivity extends AppCompatActivity {
         btnStartUIComponent1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = TestActivity.newIntent(getApplicationContext());
+                Intent intent = TestActivity.newIntent(getApplicationContext(), "Data from Container Component.");
                 startActivity(intent);
             }
         });

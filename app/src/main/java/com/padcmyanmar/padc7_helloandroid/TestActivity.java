@@ -23,15 +23,17 @@ import java.util.Random;
 
 public class TestActivity extends AppCompatActivity {
 
-    public static Intent newIntent(Context context) {
+    private static final String IE_TEXT_TO_DISPLAY = "IE_TEXT_TO_DISPLAY";
+
+    public static Intent newIntent(Context context, String textToDisplay) {
         Intent intent = new Intent(context, TestActivity.class);
+        intent.putExtra(IE_TEXT_TO_DISPLAY, textToDisplay);
         return intent;
     }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_test);
 
         TextView tvMyGreetings = findViewById(R.id.tv_my_greetings);
@@ -125,5 +127,10 @@ public class TestActivity extends AppCompatActivity {
                 }
             }
         });
+
+        String textToDisplay = getIntent().getStringExtra(IE_TEXT_TO_DISPLAY);
+
+        TextView tvTextToDisplay = findViewById(R.id.tv_text_to_display);
+        tvTextToDisplay.setText(textToDisplay);
     }
 }
