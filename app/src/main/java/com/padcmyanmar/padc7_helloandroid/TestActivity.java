@@ -1,6 +1,8 @@
 package com.padcmyanmar.padc7_helloandroid;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -20,6 +22,11 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class TestActivity extends AppCompatActivity {
+
+    public static Intent newIntent(Context context) {
+        Intent intent = new Intent(context, TestActivity.class);
+        return intent;
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
