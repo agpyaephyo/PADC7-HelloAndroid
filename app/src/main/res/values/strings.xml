@@ -1,0 +1,33 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">PADC7-HelloAndroid</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="fruit_banana">Banana</string>
+    <string name="fruit_apple">Apple</string>
+    <string name="fruit_orange">Orange</string>
+
+    <string name="btn_check_fruit"><u>Check Fruit</u></string>
+    <string name="alert_title_picked_fruits">Picked Fruits</string>
+
+    <string name="format_msg_picked_fruits">Fruits you picked : <b><xliff:g id="picked_fruits">%1$s</xliff:g></b></string>
+    <string name="gender_male">Gentleman</string>
+    <string name="gender_female">Lady</string>
+    <string name="lbl_off">OFF</string>
+    <string name="lbl_on">ON</string>
+    <string name="lbl_guest_room_light">Guest room light :</string>
+    <string name="lbl_door_lock">Door Lock :</string>
+    <string name="door_lock_open">open</string>
+    <string name="door_lock_close">close</string>
+    <string name="lbl_brightness">Brightness of the light</string>
+    <string name="lbl_how_much_you_love_the_room">How much do you love the room ?</string>
+    <string name="lbl_shower_loading">Loading the shower</string>
+    <string name="lbl_lunch_selection">Select your lunch selection</string>
+    <string name="lbl_additional_drinks">Select your additional drinks</string>
+    <string name="btn_select_date">Select Date</string>
+    <string name="format_selected_date">Your selected date :</string>
+    <string name="btn_select_time">Select Time to check-out</string>
+    <string name="format_selected_time">Your selected time :</string>
+
+    <string name="txtCredits">Support: <a href="http://www.stackoverflow.com">click here</a></string>
+    <string name="lbl_start_ui_component_1">Start UI Components 1</string>
+</resources>

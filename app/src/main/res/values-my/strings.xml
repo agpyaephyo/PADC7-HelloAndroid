@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="fruit_banana">ငှက်ပျောသီး</string>
+    <string name="fruit_apple">ပန်းသီး</string>
+    <string name="fruit_orange">လိမော်သီး</string>
+
+    <string name="alert_title_picked_fruits">ရွေးထားသော အသီးများ</string>
+    <string name="format_msg_picked_fruits">မိတ်ဆွေ ရွေးထားတဲ့ အသီးတွေကတော့ : <xliff:g id="picked_fruits">%1$s</xliff:g></string>
+</resources>
