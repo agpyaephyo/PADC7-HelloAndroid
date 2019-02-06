@@ -41,6 +41,20 @@ public class ContainerComponentsActivity extends AppCompatActivity {
                 startActivityForResult(intent, REQUEST_IMAGE_GET);
             }
         });
+
+        Button btnShowDirectionToShweDagonPagoda = findViewById(R.id.btn_show_direction);
+        btnShowDirectionToShweDagonPagoda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String openInMapPrefix = "http://maps.google.com/maps?daddr=";
+                String uriToOpen = openInMapPrefix + "Shwedagon Pagoda";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(uriToOpen));
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     @Override

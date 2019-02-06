@@ -70,6 +70,15 @@
             android:layout_alignBottom="@id/iv_user_image"
             android:layout_toRightOf="@id/iv_user_image"
             />
+        
+        <Button
+            android:id="@+id/btn_show_direction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_show_direction_to_shwedagon_pagoda"
+            android:layout_below="@id/iv_user_image"
+            android:layout_alignLeft="@id/iv_user_image"
+            />
 
     </RelativeLayout>
 
