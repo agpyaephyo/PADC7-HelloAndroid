@@ -53,6 +53,24 @@
             android:layout_below="@id/ll_weight_eg"
             android:text="@string/lbl_start_ui_component_1" />
 
+        <ImageView
+            android:id="@+id/iv_user_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/placeholder"
+            android:layout_below="@id/btn_start_ui_component_1"
+            android:layout_margin="@dimen/margin_medium_2"
+            />
+
+        <Button
+            android:id="@+id/btn_select_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_select_image"
+            android:layout_alignBottom="@id/iv_user_image"
+            android:layout_toRightOf="@id/iv_user_image"
+            />
+
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -22,5 +22,17 @@ public class ContainerComponentsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button btnSelectUserImage = findViewById(R.id.btn_select_image);
+        btnSelectUserImage.setOnClickListener(new View.OnClickListener() {
+            static final int REQUEST_IMAGE_GET = 1;
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(intent, REQUEST_IMAGE_GET);
+            }
+        });
     }
 }
