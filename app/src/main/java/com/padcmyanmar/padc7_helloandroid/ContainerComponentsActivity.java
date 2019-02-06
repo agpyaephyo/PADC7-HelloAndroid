@@ -1,18 +1,26 @@
 package com.padcmyanmar.padc7_helloandroid;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class ContainerComponentsActivity extends AppCompatActivity {
+
+    private static final int REQUEST_IMAGE_GET = 1;
+
+    private ImageView ivSelectedImage;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_container_components);
+
+        ivSelectedImage = findViewById(R.id.iv_user_image);
 
         Button btnStartUIComponent1 = findViewById(R.id.btn_start_ui_component_1);
         btnStartUIComponent1.setOnClickListener(new View.OnClickListener() {
@@ -25,7 +33,6 @@ public class ContainerComponentsActivity extends AppCompatActivity {
 
         Button btnSelectUserImage = findViewById(R.id.btn_select_image);
         btnSelectUserImage.setOnClickListener(new View.OnClickListener() {
-            static final int REQUEST_IMAGE_GET = 1;
 
             @Override
             public void onClick(View v) {
@@ -34,5 +41,14 @@ public class ContainerComponentsActivity extends AppCompatActivity {
                 startActivityForResult(intent, REQUEST_IMAGE_GET);
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_GET && resultCode == RESULT_OK && data != null) {
+            Uri fullPhotoUri = data.getData();
+            ivSelectedImage.setImageURI(fullPhotoUri);
+        }
     }
 }
