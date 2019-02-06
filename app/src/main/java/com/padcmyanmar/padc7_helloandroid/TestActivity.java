@@ -24,6 +24,7 @@ import java.util.Random;
 public class TestActivity extends AppCompatActivity {
 
     private static final String IE_TEXT_TO_DISPLAY = "IE_TEXT_TO_DISPLAY";
+    public static final String IE_RETURN_DATA = "IE_RETURN_DATA";
 
     public static Intent newIntent(Context context, String textToDisplay) {
         Intent intent = new Intent(context, TestActivity.class);
@@ -132,5 +133,16 @@ public class TestActivity extends AppCompatActivity {
 
         TextView tvTextToDisplay = findViewById(R.id.tv_text_to_display);
         tvTextToDisplay.setText(textToDisplay);
+
+        Button btnReturn = findViewById(R.id.btn_return);
+        btnReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.putExtra(IE_RETURN_DATA, "Data from Text Activity");
+                setResult(RESULT_OK, intent);
+                finish();
+            }
+        });
     }
 }

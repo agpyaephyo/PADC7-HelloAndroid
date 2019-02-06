@@ -8,10 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class ContainerComponentsActivity extends AppCompatActivity {
 
     private static final int REQUEST_IMAGE_GET = 1;
+    public static final int RC_FROM_CONTAINER_COMPONENT = 1234;
 
     private ImageView ivSelectedImage;
 
@@ -27,7 +29,7 @@ public class ContainerComponentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = TestActivity.newIntent(getApplicationContext(), "Data from Container Component.");
-                startActivity(intent);
+                startActivityForResult(intent, RC_FROM_CONTAINER_COMPONENT);
             }
         });
 
@@ -63,6 +65,9 @@ public class ContainerComponentsActivity extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_GET && resultCode == RESULT_OK && data != null) {
             Uri fullPhotoUri = data.getData();
             ivSelectedImage.setImageURI(fullPhotoUri);
+        } else if (requestCode == RC_FROM_CONTAINER_COMPONENT && resultCode == RESULT_OK && data != null) {
+            String dataFromStartedActivity = data.getStringExtra(TestActivity.IE_RETURN_DATA);
+            Toast.makeText(getApplicationContext(), dataFromStartedActivity, Toast.LENGTH_SHORT).show();
         }
     }
 }
